@@ -1,0 +1,19 @@
+
+{% extends "base.html" %}
+{% block title %}Django Learning{% endblock %}
+
+{% block content %}
+  <h1 class="bg-green-900 text-2xl">Welcome to Django</h1>
+  <h2 class="bg-red-500 text-center">This is a simple Django application.</h2>
+
+  <div class="center mt-16 p-8 mx-16 my-16">
+    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition ">
+      <a href="{% url 'new_app_view' %}">Go to Courses Page</a>
+    </button>
+
+    <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition ml-4 ">
+      <a href="{% url 'about' %}">About Us</a>
+  </div>
+{% endblock %}
+
+

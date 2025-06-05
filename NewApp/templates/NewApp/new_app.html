@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}First App{% endblock %}
+
+{% block content %}
+  <h1 class="bg-blue-500">Welcome to the Course Page</h1>
+  <h2 class="bg-red-600">This is a place where all Courses are shown</h2>
+    
+
+   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+  {% for course in courses %}
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-xl">
+      <a href="{% url 'course_detail' course.id %}">
+        <img src="https://img.youtube.com/vi/{{ course.video_id }}/hqdefault.jpg" alt="{{ course.course_name }}" class="w-full h-65 object-cover">
+
+
+        <div class="p-4 flex justify-between items-center">
+          <h2 class="text-lg font-semibold text-red-800">{{ course.course_name }}</h2>
+          <span class="text-sm text-green-500">Code {{ course.course_code }}</span>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+
+
+
+  {% endblock %}
+

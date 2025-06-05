@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}First App{% endblock %}
+
+{% block content %}
+  <div class="max-w-6xl mx-auto bg-white rounded-lg shadow-lg p-8 mt-8">
+    <h1 class="text-3xl font-extrabold text-blue-700 text-center mb-4">{{ course.course_name }}</h1>
+    <p class="text-center text-gray-500 mb-6 text-lg">Explore all the details about this course below</p>
+
+    <div class="flex flex-col md:flex-row items-center gap-8 mb-8">
+      <img src="https://img.youtube.com/vi/{{ course.video_id }}/hqdefault.jpg" class="w-64 h-64 object-cover rounded-lg shadow-md border-2 border-blue-100">
+      <div class="flex-1">
+        <p class="text-gray-700 text-lg leading-relaxed">{{ course.description }}</p>
+      </div>
+    </div>
+
+    <div class="bg-blue-50 rounded-lg p-6 mb-8">
+      <h2 class="text-xl font-semibold text-blue-600 mb-2 text-center">Watch the Course Introduction</h2>
+      <div class="flex justify-center">
+        <div class="aspect-w-16 aspect-h-9 w-full max-w-3xl">
+          <iframe class="rounded-lg shadow-md" width="100%" height="400"
+            src="https://www.youtube.com/embed/{{ course.video_id }}"
+            title="Course Video" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-6">
+      <a href="{% url 'new_app_view' %}" class="inline-block px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Back to Courses</a>
+    </div>
+  </div>
+{% endblock %}
+  
+

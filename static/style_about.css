@@ -1,0 +1,18 @@
+
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #ed6c0a;
+    background-color: rgb(20, 137, 179);
+
+
+}
+
+body{
+    background-color: #1cb90e74;
+}
