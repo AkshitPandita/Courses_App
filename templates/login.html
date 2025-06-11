@@ -2,9 +2,9 @@
 {% block title %}Login page{% endblock %}
 
 {% block content %}
-<div class="max-w-md mx-auto bg-white rounded-lg shadow-lg p-8 mt-8">
-    <h1 class="text-3xl font-extrabold text-white-700 text-center mb-4">Login</h1>
-    <p class="text-center text-gray-500 mb-6 text-lg">Please enter your credentials to login</p>
+<div class="max-w-md mx-auto bg-gray-700 rounded-lg shadow-lg p-8 mt-8">
+    <h1 class="text-3xl font-extrabold text-blue-700 text-center mb-4">Login</h1>
+    <p class="text-center text-green-500 mb-6 text-lg">Please enter your credentials to login</p>
 
     <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
@@ -18,7 +18,7 @@
             border-radius: 0.375rem;
             }
         </style>
-        <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+        <button type="submit" class="w-full bg-blue-400 text-white py-2 rounded hover:bg-blue-700 transition">
             Login
         </button>
     </form>
@@ -27,8 +27,8 @@
         {{ message }}
     {% endif %} 
 
-    {% comment %} <div class="text-center mt-4">
+    <div class="text-center mt-4">
         <a href="{% url 'register' %}" class="text-blue-600 hover:underline">Don't have an account? Register here</a>
-    </div> {% endcomment %}
+    </div> 
 
 {% endblock %}
