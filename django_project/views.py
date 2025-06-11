@@ -18,6 +18,8 @@ def Main(request):
 
 
 def Login(request):
+
+    next_url = request.GET.get('next') or request.POST.get('next') or 'home'
     if request.method == 'POST':
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -26,14 +28,14 @@ def Login(request):
             user = authenticate(request, username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('home')  # Redirect to home page after successful login
+                return redirect(next_url)  # Redirect to home page after successful login
             else:
                 message = "Invalid username or password"
     else:
         form = LoginForm()
         message= None
     
-    return render(request, 'login.html', {'form': form,'message': message})
+    return render(request, 'login.html', {'form': form,'message': message,'next': next_url})
 
 def Register(request):
     if request.method == 'POST':
